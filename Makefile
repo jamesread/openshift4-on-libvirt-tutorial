@@ -1,2 +1,2 @@
 default:
-	asciidoctor index.adoc -D /var/www/html/openshift4-on-libvirt
+	asciidoctor index.adoc -b html5 -D docs/

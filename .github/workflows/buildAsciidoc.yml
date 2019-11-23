@@ -9,7 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - run: mkdir docs
     - uses: mgred/asciidoctor-action@master
       with:
-        args: asciidoctor index.adoc
+        args: asciidoctor index.adoc -b html5 -D docs/
         
