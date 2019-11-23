@@ -13,9 +13,11 @@ jobs:
     - uses: mgred/asciidoctor-action@master
       with:
         args: make
-    - uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: docs 
+    - run: |
+        cd docs
+        git init
+        git config user.name "jamesread" 
+        git config user.email "contact@jread.com"
+        git add . 
+        git commit -m "Deploy to GH Pages"
+        git push --force --quiet "https://${ secrets.GITHUB_TOKEN }@github.com/jamesread/openshift4-on-libvirt-tutorial.git" master:gh-pages
