@@ -20,4 +20,4 @@ jobs:
         git config user.email "contact@jread.com"
         git add . 
         git commit -m "Deploy to GH Pages"
-        git push --force --quiet "https://${ secrets.GITHUB_TOKEN }@github.com/jamesread/openshift4-on-libvirt-tutorial.git" master:gh-pages
+        git push --force --quiet "https://${{ secrets.GITHUB_TOKEN }}@github.com/jamesread/openshift4-on-libvirt-tutorial.git" master:gh-pages
